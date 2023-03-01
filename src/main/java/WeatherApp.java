@@ -6,11 +6,17 @@ import org.json.JSONObject;
 import java.util.Scanner;
 
 public class WeatherApp {
-    // Copy your API-KEY here
-    public final static String apiKey = "API-KEY";
+    //API KEY : 0859916d42244043b0862754232802
+    public final static String apiKey = "0859916d42244043b0862754232802";
     // TODO: Write main function
     public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.print("City name: ");
+        String city_name = input.next();
+        String json_Data = getWeatherData(city_name);
 
+        System.out.println(city_name + "\tTemperature: " + getTemperature(json_Data));
+        System.out.println(city_name + "\tHumidity: " + getHumidity(json_Data));
     }
 
     /**
